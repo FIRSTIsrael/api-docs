@@ -1,0 +1,119 @@
+swagger: "2.0"
+info:
+  title: "FIRST Israel API"
+  description: "The official API for FIRST Israel."
+  version: "1.0.0"
+  contact:
+    email: "ofek@firstisrael.org.il"
+host: "api.firstisrael.org.il"
+basePath: "/v1"
+tags:
+- name: "Teams"
+  description: "Everything about teams"
+paths:
+  /explore/team/{team_key}:
+    get:
+      tags:
+      - "Teams"
+      description: "Gets details for a FIRST LEGO League Explore team referenced by the given key."
+      parameters:
+      - name: "team_key"
+        in: "path"
+        description: "Team Key, eg `254`."
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/FLLTeam"
+        "404":
+          description: "Team not found"
+  /challenge/team/{team_key}:
+    get:
+      tags:
+      - "Teams"
+      description: "Gets details for a FIRST LEGO League Challenge team referenced by the given key."
+      parameters:
+      - name: "team_key"
+        in: "path"
+        description: "Team Key, eg `261`."
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/FLLTeam"
+        "404":
+          description: "Team not found"
+  /ftc/team/{team_key}:
+    get:
+      tags:
+      - "Teams"
+      description: "Gets details for a FIRST Tech Challenge team referenced by the given key."
+      parameters:
+      - name: "team_key"
+        in: "path"
+        description: "Team Key, eg `9662`."
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/FTCTeam"
+        "404":
+          description: "Team not found"
+  /frc/team/{team_key}:
+    get:
+      tags:
+      - "Teams"
+      description: "Gets details for a FIRST Robotics Competition team referenced by the given key."
+      parameters:
+      - name: "team_key"
+        in: "path"
+        description: "Team Key, eg `1937`."
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/FRCTeam"
+        "404":
+          description: "Team not found"
+definitions:
+  FLLTeam:
+    type: "object"
+    properties:
+      team:
+        type: "integer"
+      affiliation:
+        type: "string"
+      city:
+        type: "string"
+  FTCTeam:
+    type: "object"
+    properties:
+      team:
+        type: "integer"
+      affiliation:
+        type: "string"
+      city:
+        type: "string"
+      rookie:
+        type: "integer"
+        description: "Rookie Year"
+  FRCTeam:
+    type: "object"
+    properties:
+      team:
+        type: "integer"
+      affiliation:
+        type: "string"
+      city:
+        type: "string"
+      rookie:
+        type: "integer"
+        description: "Rookie Year"
