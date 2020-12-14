@@ -89,31 +89,52 @@ definitions:
     properties:
       team:
         type: "integer"
+        description: "Official team number issued by FIRST."
       affiliation:
         type: "string"
+        description: "Name of team school or affilited group."
       city:
         type: "string"
+        description: "City of the team."
   FTCTeam:
     type: "object"
     properties:
       team:
         type: "integer"
+        description: "Official team number issued by FIRST."
       affiliation:
         type: "string"
+        description: "Name of team school or affilited group."
       city:
         type: "string"
+        description: "City of the team."
+      affiliation_en:
+        type: "string"
+        description: "[English] Name of team school or affilited group."
+      city_en:
+        type: "string"
+        description: "[English] City of the team."
       rookie:
         type: "integer"
-        description: "Rookie Year"
+        description: "First year the team officially competed."
   FRCTeam:
     type: "object"
     properties:
       team:
         type: "integer"
+        description: "Official team number issued by FIRST."
       affiliation:
         type: "string"
+        description: "Name of team school or affilited group."
       city:
         type: "string"
+        description: "City of the team."
+      affiliation_en:
+        type: "string"
+        description: "[English] Name of team school or affilited group."
+      city_en:
+        type: "string"
+        description: "[English] City of the team."
       rookie:
         type: "integer"
-        description: "Rookie Year"
+        description: "First year the team officially competed."
